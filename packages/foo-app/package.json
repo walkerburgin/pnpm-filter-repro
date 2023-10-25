@@ -4,7 +4,9 @@
   "author": "Walker Burgin <walkerburgin@gmail.com>",
   "scripts": {},
   "dependencies": {
-    "@monorepo/foo-lib": "workspace:*"
+    "@monorepo/foo-lib": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "typescript": "~5.2.2"

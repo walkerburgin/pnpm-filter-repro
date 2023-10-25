@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "author": "Walker Burgin <walkerburgin@gmail.com>",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "react": "^18.2.0"
+  },
   "devDependencies": {
     "typescript": "~5.2.2"
   }
