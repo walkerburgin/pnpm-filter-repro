@@ -1,0 +1,49 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  packages/bar-app:
+    dependencies:
+      '@monorepo/bar-lib':
+        specifier: workspace:*
+        version: link:../bar-lib
+    devDependencies:
+      typescript:
+        specifier: ~5.2.2
+        version: 5.2.2
+
+  packages/bar-lib:
+    devDependencies:
+      typescript:
+        specifier: ~5.2.2
+        version: 5.2.2
+
+  packages/foo-app:
+    dependencies:
+      '@monorepo/foo-lib':
+        specifier: workspace:*
+        version: link:../foo-lib
+    devDependencies:
+      typescript:
+        specifier: ~5.2.2
+        version: 5.2.2
+
+  packages/foo-lib:
+    devDependencies:
+      typescript:
+        specifier: ~5.2.2
+        version: 5.2.2
+
+packages:
+
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
