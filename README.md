@@ -6,7 +6,18 @@ for the subset of the repository that a developer is working on. The ability to 
 killer feature that led us adopt PNPM in the first place. It looks like the `--filter` argument may have been broken in the
 `v8.0.0` release.
 
-## `v7.33.6`
+
+## Repro
+
+This repository has two disjoint sets of packages:
+* `@monorepo/foo-app` -> `@monorepo/foo-lib`
+* `@monorepo/bar-app` -> `@monorepo/bar-lib`
+
+My expectation is that running `pnpm install --filter @monorepo/foo-app...` will not install dependencies for `@monorepo/bar-app`
+or `@monorepo/bar-lib`.
+
+
+### `v7.33.6`
 
 ```bash
 ➜ pnpm-filter-repro node pnpm/v7.33.6/bin/pnpm.cjs install --filter @monorepo/foo-app...
@@ -30,7 +41,7 @@ packages
         └── typescript -> ../../../node_modules/.pnpm/typescript@5.2.2/node_modules/typescript
 ```
 
-## `v8.0.0`
+### `v8.0.0`
 
 ```bash
 ➜ pnpm-filter-repro node pnpm/v8.0.0/bin/pnpm.cjs install --filter @monorepo/foo-app...
@@ -64,7 +75,7 @@ packages
         └── typescript -> ../../../node_modules/.pnpm/typescript@5.2.2/node_modules/typescript
 ```
 
-## `v8.9.2`
+### `v8.9.2`
 
 ```bash
 ➜ pnpm-filter-repro node pnpm/v8.9.2/bin/pnpm.cjs install --filter @monorepo/foo-app...
