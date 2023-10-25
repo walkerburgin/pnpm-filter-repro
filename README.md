@@ -1,5 +1,11 @@
 # pnpm-filter-repro
 
+## Overview
+We have a large monorepo that uses PNPM. Our build system calls `pnpm install` using the `--filter` argument to install dependencies
+for the subset of the repository that a developer is working on. The ability to perform a filtered install like this was actually the
+killer feature that led us adopt PNPM in the first place. It looks like the `--filter` argument may have been broken in the
+`v8.0.0` release.
+
 ## `v7.33.6`
 
 ```bash
